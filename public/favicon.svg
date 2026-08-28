@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Base Badge -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="url(#goldGrad)" stroke-width="12" opacity="0.8" />
+  
+  <!-- Stylized Moving Truck Body -->
+  <g transform="translate(48, 110)">
+    <!-- Cargo Box -->
+    <rect x="20" y="40" width="240" height="180" rx="16" fill="#ffffff" />
+    <path d="M 40 70 L 240 70 M 40 120 L 240 120 M 40 170 L 240 170" stroke="#e2e8f0" stroke-width="4" />
+    
+    <!-- Letter S / Saad Golden Brand on Cargo -->
+    <circle cx="140" cy="130" r="52" fill="#0f172a" />
+    <text x="140" y="152" font-family="'Cairo', 'Segoe UI', Arial, sans-serif" font-size="64" font-weight="900" fill="#f59e0b" text-anchor="middle">س</text>
+
+    <!-- Cabin / Front Cab -->
+    <path d="M 260 90 L 330 90 L 380 150 L 380 220 L 260 220 Z" fill="url(#goldGrad)" />
+    <!-- Cabin Window -->
+    <path d="M 275 105 L 325 105 L 360 148 L 275 148 Z" fill="#0f172a" opacity="0.85" />
+    <!-- Headlight -->
+    <rect x="365" y="180" width="15" height="20" rx="4" fill="#ffffff" />
+
+    <!-- Wheels -->
+    <!-- Rear Wheel 1 -->
+    <circle cx="90" cy="225" r="38" fill="#0f172a" stroke="#f59e0b" stroke-width="8" />
+    <circle cx="90" cy="225" r="16" fill="#ffffff" />
+    <!-- Rear Wheel 2 -->
+    <circle cx="180" cy="225" r="38" fill="#0f172a" stroke="#f59e0b" stroke-width="8" />
+    <circle cx="180" cy="225" r="16" fill="#ffffff" />
+    <!-- Front Wheel -->
+    <circle cx="330" cy="225" r="38" fill="#0f172a" stroke="#f59e0b" stroke-width="8" />
+    <circle cx="330" cy="225" r="16" fill="#ffffff" />
+
+    <!-- Speed / Motion Lines -->
+    <path d="M -10 90 L 10 90 M -25 130 L 5 130 M -10 170 L 10 170" stroke="#f59e0b" stroke-width="10" stroke-linecap="round" />
+  </g>
+</svg>

@@ -96,8 +96,8 @@ export const FreeQuoteFormSection: React.FC = () => {
           
           {/* Contact Details Sidebar (4 Cols) */}
           <motion.div 
-            initial={{ opacity: 0, x: isArabic ? 30 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 space-y-4"
@@ -191,8 +191,8 @@ export const FreeQuoteFormSection: React.FC = () => {
 
           {/* Quote Form (7 Cols) */}
           <motion.div 
-            initial={{ opacity: 0, x: isArabic ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:col-span-7"

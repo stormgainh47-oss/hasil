@@ -68,8 +68,8 @@ export const Hero: React.FC<HeroProps> = ({
           
           {/* Main Headline & Value Props (7 cols on lg) */}
           <motion.div 
-            initial={{ opacity: 0, x: isArabic ? 30 : -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-7 space-y-6 text-center sm:text-start"
           >

@@ -160,8 +160,8 @@ Please provide the tailored quotation and survey schedule.`;
           
           {/* Controls Form (7 Cols) */}
           <motion.div 
-            initial={{ opacity: 0, x: isArabic ? 25 : -25 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-7 bg-[#121212] rounded-2xl p-6 sm:p-8 shadow-xl border border-[#222222] space-y-6"
@@ -420,8 +420,8 @@ Please provide the tailored quotation and survey schedule.`;
 
           {/* Real-time Logistics Plan Summary Card (5 Cols) */}
           <motion.div 
-            initial={{ opacity: 0, x: isArabic ? -25 : 25 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="lg:col-span-5 sticky top-24 space-y-4"

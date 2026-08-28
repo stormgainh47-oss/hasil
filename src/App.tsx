@@ -55,7 +55,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-amber-400 selection:text-slate-950 font-sans">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-amber-400 selection:text-slate-950 font-sans w-full max-w-full overflow-x-hidden relative">
       
       {/* Top Navigation */}
       <Navbar
@@ -65,7 +65,7 @@ const AppContent: React.FC = () => {
       />
 
       {/* Main Content Flow */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         
         {/* 1. Hero & Branding */}
         <Hero

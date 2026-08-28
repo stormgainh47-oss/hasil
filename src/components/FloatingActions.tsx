@@ -54,7 +54,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenBooking 
         </span>
 
         {/* Hover Tooltip on Desktop */}
-        <span className="hidden lg:group-hover:inline-flex absolute end-full me-3 px-3 py-1.5 bg-slate-900 text-white text-xs font-semibold rounded-lg shadow-xl whitespace-nowrap border border-slate-700 items-center gap-1.5">
+        <span className="hidden lg:group-hover:inline-flex pointer-events-none absolute end-full me-3 px-3 py-1.5 bg-slate-900 text-white text-xs font-semibold rounded-lg shadow-xl whitespace-nowrap border border-slate-700 items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-[#25D366]"></span>
           <span>{isArabic ? 'تواصل عبر واتساب (24/7)' : 'WhatsApp Chat (24/7)'}</span>
         </span>

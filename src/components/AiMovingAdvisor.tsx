@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_CONTACTS } from '../data/ksaData';
+import { WORK_IMAGES } from '../assets/images';
 import { 
   Sparkles, 
   Send, 
@@ -110,7 +111,7 @@ export const AiMovingAdvisor: React.FC<AiMovingAdvisorProps> = ({
           {/* Visual Header Banner */}
           <div className="relative h-32 sm:h-40 w-full overflow-hidden bg-black">
             <img 
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" 
+              src={WORK_IMAGES.hero} 
               alt="AI Relocation & Logistics"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover filter brightness-75"

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { QuickQuoteCalculator } from './components/QuickQuoteCalculator';
+import { DabbabDynaBanner } from './components/DabbabDynaBanner';
 import { ServicesSection } from './components/ServicesSection';
-import { InventoryCalculator } from './components/InventoryCalculator';
-import { AiMovingAdvisor } from './components/AiMovingAdvisor';
-import { PackingMaterialsGuide } from './components/PackingMaterialsGuide';
-import { KsaCoverageMap } from './components/KsaCoverageMap';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { FaqSection } from './components/FaqSection';
+import { WhyChooseUsSection } from './components/WhyChooseUsSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
+import { OnTheJobSection } from './components/OnTheJobSection';
+import { CoverageSection } from './components/CoverageSection';
+import { ReviewsSection } from './components/ReviewsSection';
+import { FreeQuoteFormSection } from './components/FreeQuoteFormSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { MoveTrackerModal } from './components/MoveTrackerModal';
@@ -54,7 +54,7 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#E0E0E0] flex flex-col selection:bg-[#C5A059] selection:text-[#0A0A0A]">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 flex flex-col selection:bg-amber-400 selection:text-slate-950 font-sans">
       
       {/* Top Navigation */}
       <Navbar
@@ -63,29 +63,24 @@ const AppContent: React.FC = () => {
         onScrollToSection={handleScrollToSection}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content Flow */}
       <main className="flex-1">
         
-        {/* 1. Hero Landing & Quick Estimation Banner */}
+        {/* 1. Hero & Branding */}
         <Hero
           onOpenBooking={() => handleOpenBooking()}
           onOpenTracker={handleOpenTracker}
           onScrollToSection={handleScrollToSection}
         />
 
-        {/* 2. Interactive Quick Quote & Route Price Calculator */}
-        <QuickQuoteCalculator
-          onBookQuote={(quote) => {
-            handleOpenBooking({
-              moveType: quote.moveType,
-              fromCity: quote.fromCity,
-              toCity: quote.toCity,
-              estimatedCost: quote.estimatedCost,
-            });
-          }}
+        {/* 1.5 Dabbab & Dyna Local Transport 24/7 Featured Banner */}
+        <DabbabDynaBanner
+          onOpenBooking={() => handleOpenBooking({
+            moveType: isArabic ? 'دباب ودينا نقل محلي' : 'Dabbab & Dyna Local Transport'
+          })}
         />
 
-        {/* 3. Core Moving, Relocation & Packing Services */}
+        {/* 2. Our Services (Dedicated Services + Visual Crew Banner) */}
         <ServicesSection
           onOpenBookingForService={(serviceTitle) => {
             handleOpenBooking({
@@ -94,37 +89,25 @@ const AppContent: React.FC = () => {
           }}
         />
 
-        {/* 4. Room-by-Room Inventory & CBM / Dyna Truck Calculator */}
-        <InventoryCalculator
-          onOpenBookingWithInventory={(inventorySummary) => {
-            handleOpenBooking({
-              itemsSummary: inventorySummary,
-            });
-          }}
+        {/* 3. Why Choose Us (4 Core Pillars) */}
+        <WhyChooseUsSection />
+
+        {/* 4. How It Works (4 Simple Steps) */}
+        <HowItWorksSection
+          onOpenQuote={() => handleScrollToSection('free-quote')}
         />
 
-        {/* 5. Server-Side Gemini AI Moving Advisor & Strategy Consultant */}
-        <AiMovingAdvisor
-          onOpenBookingWithAiAdvice={(aiAdviceSummary) => {
-            handleOpenBooking({
-              itemsSummary: `AI Plan: ${aiAdviceSummary}`,
-            });
-          }}
-        />
+        {/* 5. On the Job (Living Rooms to Office Floors) */}
+        <OnTheJobSection />
 
-        {/* 6. 5-Layer Military-Grade Packing Materials Guide */}
-        <PackingMaterialsGuide
-          onOpenBooking={() => handleOpenBooking({ moveType: 'Full 5-Layer Packing Package' })}
-        />
+        {/* 6. Coverage (Jeddah HQ + All over KSA) */}
+        <CoverageSection />
 
-        {/* 7. Kingdom-Wide Moving Matrix (Jeddah HQ + All KSA Hubs) */}
-        <KsaCoverageMap />
+        {/* 7. Reviews (6 Customer Testimonials) */}
+        <ReviewsSection />
 
-        {/* 8. Verified Customer Reviews & Testimonials */}
-        <TestimonialsSection />
-
-        {/* 9. FAQ Section */}
-        <FaqSection />
+        {/* 8. Free Quote & Contact Form */}
+        <FreeQuoteFormSection />
 
       </main>
 
@@ -135,7 +118,7 @@ const AppContent: React.FC = () => {
         onScrollToSection={handleScrollToSection}
       />
 
-      {/* Free Inspection Survey & Booking Modal */}
+      {/* Booking Modal */}
       <BookingModal
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}

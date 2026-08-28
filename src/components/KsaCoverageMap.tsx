@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { KSA_CITIES, COMPANY_CONTACTS } from '../data/ksaData';
+import { WORK_IMAGES } from '../assets/images';
 import { 
   MapPin, 
   Truck, 
@@ -90,7 +91,7 @@ export const KsaCoverageMap: React.FC = () => {
             {/* Visual Route Photo Banner */}
             <div className="relative h-44 w-full overflow-hidden bg-black/50">
               <img 
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80" 
+                src={WORK_IMAGES.intercityTransport} 
                 alt="Saudi Arabia Relocation Fleet"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-80"

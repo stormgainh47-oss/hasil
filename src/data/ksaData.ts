@@ -1,4 +1,5 @@
 import { CityLocation, ServiceItem, InventoryCategory, Testimonial, PackingMaterial, FaqItem } from '../types';
+import { WORK_IMAGES } from '../assets/images';
 
 export const KSA_CITIES: CityLocation[] = [
   {
@@ -168,164 +169,227 @@ export const KSA_CITIES: CityLocation[] = [
 export const SERVICES_CATALOG: ServiceItem[] = [
   {
     id: 'home-shifting',
-    titleEn: 'Home & Villa Relocation',
-    titleAr: 'نقل عفش المنازل والفلل',
-    shortDescEn: 'Complete residential moving with zero-scratch guarantee, room-by-room labeling, and clean floor protection.',
-    shortDescAr: 'نقل كامل للمنازل والفلل والشقق مع ضمان عدم الخدش، وترقيم الكراتين، وحماية الأرضيات والممرات.',
-    fullDescEn: 'Our residential moving team provides seamless end-to-end relocation for apartments, duplexes, and luxury villas. We bring dedicated covered Dyna trucks, professional handling staff, and heavy furniture blankets to ensure every sofa, television, mattress, and wardrobe arrives in mint condition.',
-    fullDescAr: 'فريقنا المتخصص في نقل المنازل يقدم خدمة شاملة من الباب إلى الباب للشقق والفلل والقصور. نستخدم شاحنات دينا مغلقة ومجهزة بمفروشات عازلة مع فريق عمل مدرب ومحترف لنقل غرف النوم والمجالس والمطابخ والأجهزة الكهربائية بأعلى معايير الأمان.',
+    titleEn: 'Home Shifting',
+    titleAr: 'نقل العفش المنزلي والسكني',
+    shortDescEn: 'Complete household moves across town or between cities — packed, transported, and unpacked with care.',
+    shortDescAr: 'نقل كامل للمنازل والفلل والشقق داخل جدة وبين المدن — تغليف احترافي ونقل وتركيب بعناية فائقة.',
+    fullDescEn: 'Complete household moves across town or between cities — packed, transported, and unpacked with care. Our residential team brings specialized covered Dyna trucks, heavy furniture blankets, and careful hands to ensure your whole home is moved smoothly.',
+    fullDescAr: 'نقل كامل للمنازل والفلل والشقق داخل جدة وبين مدن المملكة مع ضمان عدم الخدش، وترقيم الكراتين، وحماية شاملة للأثاث والمفروشات.',
     iconName: 'Home',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    badgeEn: 'Most Popular in Jeddah',
-    badgeAr: 'الأكثر طلباً في جدة',
+    imageUrl: WORK_IMAGES.residentialHomeShifting,
+    badgeEn: 'Popular Choice',
+    badgeAr: 'الخيار الأكثر طلباً',
     featuresEn: [
-      'Comprehensive floor & doorframe scratch shielding',
-      'Disassembly & bubble wrapping of luxury bedroom sets',
-      'Hanging wardrobe boxes for designer clothing',
-      'Curtain, chandelier & wall decor unmounting/remounting',
-      'Placement & positioning at your new home'
+      'Disassembly & assembly of all bedroom furniture',
+      'Protective bubble & carton wrapping',
+      'Covered and cushioned Dyna trucks',
+      'Clean placement in your new home'
     ],
     featuresAr: [
-      'حماية كاملة للأرضيات وإطارات الأبواب أثناء النقل',
-      'فك وتغليف غرف النوم الفاخرة بالبابلز والكرتون المقوى',
-      'صناديق كرتونية مخصصة لتعليق الملابس والبدل والفساتين',
-      'فك وتركيب الستائر والنجف والديكورات الجدارية',
-      'إعادة ترتيب وتوزيع الأثاث بالكامل في المنزل الجديد'
-    ]
-  },
-  {
-    id: 'carpenter-services',
-    titleEn: 'Master Carpenter (Najjar) Services',
-    titleAr: 'خدمات النجارين المحترفين (فك وتركيب)',
-    shortDescEn: 'Expert carpenters for IKEA, Italian, Turkish, and custom bedroom sets, kitchens, and modular cabinets.',
-    shortDescAr: 'نجارون محترفون لفك وتركيب جميع أنواع غرف النوم (ايكيا، إيطالي، تركي، صيني) والمطابخ وخزائن الملابس.',
-    fullDescEn: 'Precision furniture dismantling and reassembly done by seasoned master carpenters. We ensure all bolts, screws, and hinges are cataloged in coded bags, preventing missing parts or structural wobbling during re-assembly.',
-    fullDescAr: 'فريق نجارين خبراء يمتلكون أحدث المعدات لفك وتركيب كافة أنواع الأثاث الخشبي والمعدني بدقة متناهية، مع حفظ المسامير والبراولا في أكياس مخصصة ومرقمة لضمان عودة الأثاث كما كان دون أي ارتخاء أو ميلان.',
-    iconName: 'Wrench',
-    imageUrl: 'https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=800&q=80',
-    badgeEn: '100% Fit Guarantee',
-    badgeAr: 'ضمان دقة التركيب 100%',
-    featuresEn: [
-      'IKEA, Home Centre, and luxury Italian furniture experts',
-      'Custom kitchen cabinet resizing and installation',
-      'Sliding wardrobe alignment & track adjustment',
-      'TV wall-mount bracket dismantling & re-installation',
-      'All structural hardware securely bagged and tagged'
-    ],
-    featuresAr: [
-      'خبرة متخصصة في أثاث ايكيا وهوم سنتر والمستورد الإيطالي والتركي',
-      'فك وتعديل وتركيب دواليب المطابخ ورخام المطبخ',
-      'ضبط مجاري الأبواب السحابة لخزائن الملابس',
-      'فك وتركيب حوامل الشاشات الجدارية بدقة وأمان',
-      'ترقيم وتغليف كافة الإكسسوارات والمسامير بدقة'
+      'فك وتركيب كافة غرف النوم والأثاث',
+      'تغليف بالبابلز والكرتون المقوى',
+      'شاحنات دينا مغلقة ومبطنة',
+      'إعادة ترتيب الأثاث في المنزل الجديد'
     ]
   },
   {
     id: 'office-relocation',
-    titleEn: 'Office & Corporate Relocation',
-    titleAr: 'نقل المكاتب والشركات والمؤسسات',
-    shortDescEn: 'Minimal business downtime, dedicated IT equipment crating, server rack handling, and organized archive moving.',
-    shortDescAr: 'نقل سريع بدون تعطيل لسير العمل، مع تغليف مخصص للأجهزة الإلكترونية وخوادم السيرفر والأرشيف الإداري.',
-    fullDescEn: 'Engineered for seamless corporate transitions across Jeddah, Riyadh, and KSA. We handle sensitive electronics, multi-user workstations, executive conference suites, and confidential documentation boxes with tamper-evident seals.',
-    fullDescAr: 'حلول لوجستية متطورة للشركات والمصارف والمؤسسات الحكومية والخاصة في جدة وكافة مدن المملكة. ننقل محطات العمل، خوادم الشبكات، قاعات الاجتماعات، وأرشيف الملفات مع ملصقات سرية وأكواد جرد دقيقة.',
+    titleEn: 'Office Relocation',
+    titleAr: 'نقل المكاتب والشركات',
+    shortDescEn: 'Minimal-downtime office moves: workstations, files, and IT relocated while your team stays focused.',
+    shortDescAr: 'نقل مكاتب وشركات بدون تعطيل للعمل: محطات العمل، الملفات، والأجهزة الإلكترونية مع الحفاظ على تركيز فريقك.',
+    fullDescEn: 'Minimal-downtime corporate and commercial moves: workstations, confidential files, server units, and IT gear safely transported and set up, allowing your business to operate without interruption.',
+    fullDescAr: 'نقل سريع واحترافي للشركات والمؤسسات والمكاتب الإدارية في جدة وكافة أنحاء المملكة مع الحفاظ على سرية الملفات وسلامة الحواسيب وشبكات السيرفر.',
     iconName: 'Briefcase',
-    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    badgeEn: 'Weekend & Overnight Available',
-    badgeAr: 'متاح عطلات نهاية الأسبوع ومساءً',
+    imageUrl: WORK_IMAGES.officeRelocation,
+    badgeEn: 'Zero Downtime',
+    badgeAr: 'بدون تعطيل للعمل',
     featuresEn: [
-      'Anti-static bubble wrap for PCs, monitors, and servers',
-      'Color-coded department tagging & floor plan mapping',
-      'Heavy safe and fireproof filing cabinet moving',
-      'Flexible weekend and overnight execution for zero downtime',
-      'Dedicated project manager and detailed inventory manifest'
+      'Anti-static packing for IT equipment & screens',
+      'Organized department and desk labeling',
+      'Weekend and overnight scheduling options',
+      'Filing cabinet and heavy safe transport'
     ],
     featuresAr: [
-      'تغليف مضاد للشحنات الكهربائية لشاشات الكمبيوتر والخوادم',
-      'نظام ألوان مرمز للأقسام لتفريغ سريع وفق المخطط المكتبي',
-      'نقل الخزائن الحديدية الثقيلة وخزائن الملفات المصفحة',
-      'تنفيذ العمل في عطلة نهاية الأسبوع لتجنب توقف نشاط الشركة',
-      'مشرف مشروع مخصص مع كشوفات جرد دقيقة وموثقة'
+      'تغليف مخصص للإلكترونيات والشاشات',
+      'ترقيم دقيق لكل مكتب وقسم إداري',
+      'مواعيد مرنة في عطلة نهاية الأسبوع',
+      'نقل الخزائن الحديدية والملفات'
+    ]
+  },
+  {
+    id: 'dabbab-dyna-local-transport',
+    titleEn: 'Dabbab & Dyna Local Transport (24/7 Service)',
+    titleAr: 'دباب ودينا لنقل العفش والتوصيل المحلي (خدمة 24/7)',
+    shortDescEn: 'Dabbab & Dyna available for local transport — call me anytime 24/7 service for local transport across all Jeddah districts.',
+    shortDescAr: 'دباب ودينا متوفر لنقل وتوصيل العفش والبضائع محلياً — اتصل بنا في أي وقت على مدار 24/7 لنقل سريع وآمن.',
+    fullDescEn: 'Fast and flexible Dabbab mini-trucks and closed Dyna vehicles on standby 24/7 for swift local furniture transport, single items, urgent appliance delivery, bedroom sets, and quick city shifting anywhere across Jeddah. Call me anytime day or night for immediate dispatch.',
+    fullDescAr: 'أسطول دباب ودينا جاهز ومتاح على مدار 24 ساعة طوال أيام الأسبوع للنقل والتوصيل المحلي السريع داخل جدة. مثالي لنقل الغرف الفردية، الأجهزة الكهربائية، الأثاث المنزلي، والبضائع مع إمكانية توفير عمالة تحميل وتنزيل وتغليف حسب الطلب. اتصل بنا في أي وقت.',
+    iconName: 'Truck',
+    imageUrl: WORK_IMAGES.dabbabDynaLocal,
+    badgeEn: '24/7 Fast Transport',
+    badgeAr: 'خدمة سريعة 24/7',
+    featuresEn: [
+      'Dabbab & Dyna available for local transport immediately',
+      '24/7 Service — call me anytime day or night',
+      'Ideal for single furniture pieces, rooms, boxes & urgent shifting',
+      'Fast doorstep pickup & careful local delivery across Jeddah'
+    ],
+    featuresAr: [
+      'دباب ودينا متوفر فوراً للنقل والتوصيل المحلي',
+      'خدمة متاحة 24/7 — اتصل بنا في أي وقت ليلاً أو نهاراً',
+      'مثالي لنقل الغرف الفردية، الكراتين، الأجهزة والنقل المستعجل',
+      'وصول سريع عند بابك ونقل آمن إلى أي حي في جدة'
+    ]
+  },
+  {
+    id: 'furniture-moving-relocation-ksa',
+    titleEn: 'Furniture Moving & Relocation (Local & All Over KSA)',
+    titleAr: 'خدمات نقل وترحيل الأثاث (محلياً وفي كافة أنحاء المملكة)',
+    shortDescEn: 'Comprehensive furniture moving and relocation services across Jeddah and all cities in Saudi Arabia — careful dismantling, secure loading, and doorstep delivery.',
+    shortDescAr: 'خدمات متكاملة لنقل وترحيل الأثاث والعفش محلياً في جدة ولكافة مدن ومناطق المملكة — فك وتركيب وتغليف احترافي وتسليم مباشر عند بابك.',
+    fullDescEn: 'Specialized furniture moving and relocation services tailored for local city moves in Jeddah and intercity routes across Saudi Arabia (Riyadh, Makkah, Madinah, Dammam, Khobar, Taif, Yanbu, Abha). Our certified moving crews handle delicate antiques, heavy luxury bedroom sets, majlis, dining tables, and large home furnishings using shock-absorbent multi-layer packing, modern covered Dyna trucks, and careful hands.',
+    fullDescAr: 'خدمات متخصصة في نقل وترحيل الأثاث والعفش المنزلي والمكتبي داخل جدة وكافة أنحاء المملكة العربية السعودية (الرياض، مكة، المدينة، الدمام، الخبر، الطائف، ينبع، أبها). يتولى فريقنا المحترف فك وتركيب الأثاث الفاخر، غرف النوم، المجالس، والأجهزة الحساسة مع التغليف الحراري الخماسي واستخدام شاحنات دينا مغلقة ومبطنة تضمن وصول كل قطعة بأمان تام.',
+    iconName: 'Truck',
+    imageUrl: WORK_IMAGES.furnitureRelocationKsa,
+    badgeEn: 'Local & All Over KSA',
+    badgeAr: 'محلياً وكافة أنحاء المملكة',
+    featuresEn: [
+      'Local moves across all Jeddah districts & neighborhoods',
+      'Express intercity routes to Riyadh, Dammam, Mecca & all KSA',
+      'Full dismantling, wrapping & precision reassembly',
+      '100% Damage-free transit & insurance coverage'
+    ],
+    featuresAr: [
+      'تغطية محلية شاملة لكافة أحياء ومخططات جدة',
+      'رحلات منتظمة وسريعة إلى الرياض، الشرقية، مكة وجميع مناطق المملكة',
+      'فك وتغليف وتركيب دقيق لجميع أنواع الأثاث والمفروشات',
+      'ضمان شامل بنسبة 100% ضد الخدوش والكسور'
+    ]
+  },
+  {
+    id: 'furniture-moving',
+    titleEn: 'Furniture Moving',
+    titleAr: 'نقل الأثاث والعفش الثقيل',
+    shortDescEn: 'Heavy and fragile furniture moved safely with protective wrapping, the right equipment, and skilled hands.',
+    shortDescAr: 'نقل الأثاث الثقيل والحساس بأمان تام مع التغليف الواقي والمعدات المناسبة والأيدي المدربة.',
+    fullDescEn: 'Heavy and fragile furniture moved safely with protective wrapping, the right equipment, and skilled hands. From sofas, luxury dining tables, and marble pieces to heavy consoles.',
+    fullDescAr: 'نقل الأثاث الثقيل والقطع الحساسة كالمجالس الكبيرة وطاولات الطعام الرخامية والزجاجية باستخدام بطانيات التوسيد وأحزمة الرفع المتينة.',
+    iconName: 'Truck',
+    imageUrl: WORK_IMAGES.furnitureWrapping,
+    badgeEn: 'Careful Handling',
+    badgeAr: 'عناية فائقة',
+    featuresEn: [
+      'Heavy padded moving blankets',
+      'Corner guards and stretch film seals',
+      'Straps and hydraulic equipment for heavy items',
+      'Precise room-to-room positioning'
+    ],
+    featuresAr: [
+      'بطانيات تبطين سميكة لحماية الخشب',
+      'حماية زوايا الأثاث بالنايلون الحراري',
+      'أحزمة ومعدات خاصة للأوزان الثقيلة',
+      'وضع كل قطعة في مكانها المحدد'
     ]
   },
   {
     id: 'professional-packing',
-    titleEn: '5-Layer Professional Packing',
-    titleAr: 'تغليف احترافي 5 طبقات شامل المواد',
-    shortDescEn: 'Military-grade packing with shockproof bubble rolls, 5-ply cartons, shrink wrap, and custom wooden crating.',
-    shortDescAr: 'تغليف متقدم بمواد عالية الجودة: بابلز سميك، كراتين 5 طبقات، نايلون ستريتش حراري، وتفصيل صناديق خشبية.',
-    fullDescEn: 'We treat packing as an exact science. From fragile crystal chandeliers and fine china to 85-inch OLED TVs, our multi-layer cushioning creates an impenetrable barrier against transit vibration, dust, and Saudi desert heat.',
-    fullDescAr: 'نعتبر التغليف خط الدفاع الأول لحماية مقتنياتك. من أطقم الصيني والكريستال والتحف إلى شاشات التلفزيون الكبيرة، نوفر تغليفاً متعدد الطبقات يمتص الصدمات ويحمي تماماً من الغبار ورطوبة وحرارة الطريق.',
+    titleEn: 'Professional Packing',
+    titleAr: 'التغليف الاحترافي الشامل',
+    shortDescEn: 'Industry-grade boxes, bubble wrap, and custom crating for glassware, art, electronics, and valuables.',
+    shortDescAr: 'كراتين مضلعة عالية الجودة، بابلز هوائي سميك، وصناديق مخصصة للزجاجيات واللوحات الفنية والإلكترونيات.',
+    fullDescEn: 'Industry-grade boxes, bubble wrap, and custom crating for glassware, art, electronics, and valuables. Multi-barrier protection engineered to prevent any scratches or transit damage.',
+    fullDescAr: 'تغليف احترافي عالي الجودة بكراتين 5 طبقات، رولات بابلز هوائية، وورق تغليف للأواني والصيني لضمان حماية 100% ضد الكسر والخدش.',
     iconName: 'Package',
-    imageUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
-    badgeEn: 'Zero Breakage Guarantee',
+    imageUrl: WORK_IMAGES.fragilePacking,
+    badgeEn: 'Zero Breakage',
     badgeAr: 'ضمان عدم الكسر',
     featuresEn: [
-      'Heavy-duty 5-ply double-wall corrugated moving boxes',
-      '80-micron high-density air bubble wrap',
-      'Industrial shrink film against moisture & desert dust',
-      'Custom wooden crating for delicate glass, art & marble',
-      'Acid-free packing paper for dishes and kitchenware'
+      'Heavy-duty 5-ply corrugated carton boxes',
+      'High-density shockproof air bubble wrap',
+      'Shrink wrap protection against dust and humidity',
+      'Custom protection for art, mirrors & chandeliers'
     ],
     featuresAr: [
-      'كراتين كرتون مقوى 5 طبقات مضاعفة لتحمل الأوزان العالية',
-      'بابلز هوائي سميك 80 ميكرون لامتصاص أعلى درجات الصدمات',
-      'رولات نايلون ستريتش صناعي محكم لعزل الغبار والرطوبة',
-      'صناديق خشبية مفصلة للرخام واللوحات الفنية والزجاج الحساس',
-      'ورق تغليف ناعم خاص بأواني المطبخ والأطقم الفخارية'
+      'كراتين مقواة 5 طبقات مضاعفة',
+      'بابلز هوائي سميك لامتصاص الصدمات',
+      'نايلون ستريتش لعزل الأتربة والرطوبة',
+      'تغليف خاص للتحف والثريات والمرايا'
     ]
   },
   {
-    id: 'intercity-ksa-moving',
-    titleEn: 'Kingdom-Wide Intercity Moving (All KSA)',
-    titleAr: 'نقل عفش بين جميع مدن المملكة',
-    shortDescEn: 'Daily covered Dyna and heavy trailer routes connecting Jeddah to Riyadh, Dammam, Madinah, Makkah, Tabuk & more.',
-    shortDescAr: 'رحلات يومية بشاحنات دينا وتريلات مغلقة تربط جدة بالرياض، الدمام، المدينة، مكة، تبوك، والجنوب.',
-    fullDescEn: 'Relocating to another city in Saudi Arabia? Our fleet of GPS-tracked, insulated long-haul Dyna trucks and high-capacity trailers provides express, climate-shielded transit from Jeddah to any destination in the Kingdom.',
-    fullDescAr: 'هل تنتقل إلى مدينة أخرى داخل المملكة؟ أسطولنا من شاحنات الدينا المغلقة والتريلات المجهزة بنظام التتبع والبطانة الداخلية ينقل أثاثك بسرعة وأمان تام من جدة إلى الرياض، الدمام، القصيم، تبوك، وأبها.',
-    iconName: 'Truck',
-    imageUrl: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80',
-    badgeEn: 'GPS Tracked Fleet',
-    badgeAr: 'أسطول مجهز بأنظمة GPS',
-    featuresEn: [
-      'Insulated closed trucks protecting against highway heat',
-      'Fast 24-48 hour delivery to Riyadh and Eastern Province',
-      'Comprehensive cargo security and tied-down lashing straps',
-      'Full dismantling in Jeddah and complete assembly at destination',
-      'Transparent milestone updates via SMS & WhatsApp'
-    ],
-    featuresAr: [
-      'شاحنات مغلقة ومبطنة تحمي الأثاث من حرارة وغبار الطرق السريعة',
-      'توصيل سريع خلال 24 إلى 48 ساعة للرياض والمنطقة الشرقية',
-      'تثبيت محكم بحبال وأحزمة أمان لمنع أي حركة أثناء القيادة',
-      'فك كامل وتغليف في جدة مع إعادة التركيب الشامل في مدينة الوصول',
-      'تحديثات فورية لموقع الشحنة عبر الواتساب والرسائل'
-    ]
-  },
-  {
-    id: 'crane-storage-solutions',
-    titleEn: 'Hydraulic Winch Hoisting & Safe Storage',
-    titleAr: 'أوناش رفع الأثاث والمستودعات المكيفة',
-    shortDescEn: 'Hydraulic exterior cranes for high towers + secure, pest-controlled climate storage facilities in Jeddah.',
-    shortDescAr: 'أوناش هيدروليكية لرفع وإنزال الأثاث الثقيل للأدوار العليا + مستودعات تخزين مكيفة ومحمية 24/7.',
-    fullDescEn: 'For tight staircases and towering Jeddah apartment buildings, our hydraulic crane lifts elevate heavy sofas, grand pianos, and large glass tables directly through balconies. Plus, we offer flexible short and long-term secure warehousing.',
-    fullDescAr: 'للمباني الشاهقة والسلالم الضيقة في عمارات وأبراج جدة، نوفر أوناش رفع هيدروليكية خارجية تصل حتى الدور 15 لرفع الكنب الكبير والأجهزة الحساسة عبر النوافذ والشرفات، بالإضافة لمستودعات تخزين آمنة ومكيفة.',
+    id: 'loading-unloading',
+    titleEn: 'Loading & Unloading',
+    titleAr: 'التحميل والتنزيل بالعمالة المدربة',
+    shortDescEn: 'A trained crew with trolleys, ramps, and straps loads and unloads your goods without a scratch.',
+    shortDescAr: 'طاقم عمل مدرب مع عربات ترولي ومزالق وأحزمة تحميل ينقل وينزل عفشك بدون أي خدش.',
+    fullDescEn: 'A trained moving crew equipped with heavy-duty trolleys, ramps, and lashing straps loads and unloads your goods with utmost care, navigating narrow staircases and elevators effortlessly.',
+    fullDescAr: 'عمالة متخصصة ومحترفة في رفع وتنزيل وترتيب العفش داخل الشاحنات بأمان تام وباستخدام أحدث معدات المناولة والرافعات.',
     iconName: 'ShieldCheck',
-    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-    badgeEn: 'Up to 15th Floor Reach',
-    badgeAr: 'وصول حتى الدور الـ 15',
+    imageUrl: WORK_IMAGES.hero,
+    badgeEn: 'Trained Movers',
+    badgeAr: 'عمالة ماهرة',
     featuresEn: [
-      'High-capacity hydraulic external crane lifting',
-      'Safe window & balcony intake by certified riggers',
-      'Clean, dust-free & air-conditioned storage units in Jeddah',
-      '24/7 CCTV surveillance and pest-controlled environment',
-      'Flexible daily, monthly, or yearly storage contracts'
+      'Heavy-duty transport trolleys and dollies',
+      'Secure truck loading & weight balance',
+      'Safe stair and elevator navigation',
+      'Zero scuffs on walls or doorframes'
     ],
     featuresAr: [
-      'أوناش هيدروليكية حديثة للأدوار العليا بأعلى معايير السلامة',
-      'إنزال ورفع آمن للأثاث الضخم والرخام عبر الواجهات والشرفات',
-      'مستودعات تخزين نظيفة، معقمة، ومكيفة لحماية الأخشاب والمفروشات',
-      'حراسة ومراقبة بالكاميرات على مدار 24 ساعة ومكافحة حشرات دورية',
-      'عقود تخزين مرنة (أسبوعي، شهري، سنوي) بأسعار تنافسية'
+      'عربات نقل حديثة وأحزمة تثبيت قوية',
+      'ترتيب حمولة الشاحنة بتوازن هندسي',
+      'حماية جدران ومصاعد المبنى من الاحتكاك',
+      'تنزيل وترتيب منظم وسريع'
+    ]
+  },
+  {
+    id: 'intercity-transport',
+    titleEn: 'Intercity Transport',
+    titleAr: 'نقل العفش بين مدن المملكة',
+    shortDescEn: 'Reliable long-distance transport with careful route planning, secure loads, and on-time delivery.',
+    shortDescAr: 'نقل موثوق لمسافات طويلة بين كافة المدن مع تخطيط دقيق للطريق وتأمين الحمولة والالتزام بالوقت.',
+    fullDescEn: 'Reliable long-distance transport with careful route planning, secure loads, and on-time delivery across Jeddah, Mecca, Medina, Riyadh, Dammam, Al Khobar, Taif, Yanbu, Abha, and all over KSA.',
+    fullDescAr: 'رحلات منتظمة وسريعة بشاحنات دينا وتريلات مغلقة تربط جدة بالرياض، الدمام، مكة، المدينة، تبوك، والمنطقة الجنوبية مع التوصيل بالموعد المحدد.',
+    iconName: 'Truck',
+    imageUrl: WORK_IMAGES.intercityTransport,
+    badgeEn: 'All Over KSA',
+    badgeAr: 'كافة مدن المملكة',
+    featuresEn: [
+      'Insulated closed trucks against highway dust & heat',
+      'Express 24-48 hour intercity transit schedules',
+      'Tight tied-down straps & cargo anchoring',
+      'Full dismantling in origin & assembly at destination'
+    ],
+    featuresAr: [
+      'شاحنات مبطنة ومعزولة ضد حرارة وغبار الطريق',
+      'توصيل سريع خلال 24 إلى 48 ساعة بين المدن',
+      'تثبيت محكم للبضائع بأحزمة أمان متينة',
+      'فك الأثاث في مدينة الانطلاق وتركيبه عند الوصول'
+    ]
+  },
+  {
+    id: 'wardrobe-uninstall-refix',
+    titleEn: 'Wardrobe Uninstall & Refix',
+    titleAr: 'فك وتركيب وتعديل الدواليب والخزائن',
+    shortDescEn: 'Cupboards and wardrobes carefully dismantled, moved, and refitted in your new place — doors, rails, and shelves exactly where they should be.',
+    shortDescAr: 'فك دواليب وخزائن الملابس بعناية ونقلها وإعادة تركيبها في منزلك الجديد — الأبواب والمجاري والأرفف في مكانها الصحيح تماماً.',
+    fullDescEn: 'Cupboards, wardrobes, and closets carefully dismantled, moved, and refitted in your new place — sliding doors, guide rails, hinges, and shelves adjusted and aligned exactly where they should be by professional carpenters.',
+    fullDescAr: 'نجارون محترفون لفك وتركيب وضبط دواليب الملابس الكبيرة والسحابة وخزائن ايكيا والمطابخ مع ضبط المفصلات والمجاري والأرفف لتعود كالجديدة تماماً.',
+    iconName: 'Wrench',
+    imageUrl: WORK_IMAGES.wardrobeAssembly,
+    badgeEn: 'Expert Carpenters',
+    badgeAr: 'نجارون خبراء',
+    featuresEn: [
+      'IKEA, Home Centre, and luxury Italian wardrobe specialists',
+      'Sliding door alignment and track recalibration',
+      'All screws and hardware labeled in secure pouches',
+      'Custom shelf and cupboard adjustments'
+    ],
+    featuresAr: [
+      'خبرة في دواليب ايكيا وهوم سنتر والمستورد',
+      'وزن وضبط الأبواب السحابة ومجاري الأدراج',
+      'حفظ وترقيم كافة المسامير والإكسسوارات',
+      'تعديل وتثبيت الأرفف بدقة متناهية'
     ]
   }
 ];
@@ -414,7 +478,7 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
     specificationEn: 'Double-cushion air bubbles, puncture-resistant, antistatic coating.',
     specificationAr: 'فقاعات هوائية مزدوجة، مقاوم للتمزق، ومعالج ضد الشحنات الساكنة.',
     icon: 'Shield',
-    imageUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
+    imageUrl: WORK_IMAGES.fragilePacking,
     badgeEn: 'Zero-Scratch Protection',
     badgeAr: 'حماية فائقة من الخدوش'
   },
@@ -427,7 +491,7 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
     specificationEn: 'Export grade 200 GSM kraft liner, stackable up to 6 units high.',
     specificationAr: 'ورق كرافت عالي الكثافة 200 جرام، قابل للرص حتى 6 مستويات بأمان.',
     icon: 'Box',
-    imageUrl: 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80',
+    imageUrl: WORK_IMAGES.residentialHomeShifting,
     badgeEn: 'Export Quality',
     badgeAr: 'جودة تصدير معتمدة'
   },
@@ -440,7 +504,7 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
     specificationEn: '23-micron high tensile elasticity with self-adhesive cling.',
     specificationAr: 'مطاطية عالية 23 ميكرون والتصاق ذاتي محكم بدون ترك أثر غراء.',
     icon: 'Layers',
-    imageUrl: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80',
+    imageUrl: WORK_IMAGES.furnitureWrapping,
     badgeEn: 'Dust & Humidity Proof',
     badgeAr: 'عازل للغبار والرطوبة'
   },
@@ -453,7 +517,7 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
     specificationEn: 'Thick non-woven padded cotton fabric with double zig-zag stitching.',
     specificationAr: 'قماش قطني مبطن سميك بخياطة متينة متعددة الطبقات.',
     icon: 'Feather',
-    imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80',
+    imageUrl: WORK_IMAGES.furnitureWrapping,
     badgeEn: 'Damage Free Transit',
     badgeAr: 'حماية الأثاث الحساس'
   },
@@ -466,7 +530,7 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
     specificationEn: 'Heat-treated timber, foam-lined inner perimeter, screw-fastened.',
     specificationAr: 'خشب معالج حرارياً ومبطن بالفوم الداخلي ومثبت بمسامير أمان.',
     icon: 'Hammer',
-    imageUrl: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80',
+    imageUrl: WORK_IMAGES.wardrobeAssembly,
     badgeEn: 'Ultimate Fragile Security',
     badgeAr: 'أقصى درجات الأمان'
   }
@@ -475,54 +539,99 @@ export const PACKING_MATERIALS: PackingMaterial[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
-    nameEn: 'Eng. Khalid Al-Otaibi',
-    nameAr: 'م. خالد العتيبي',
-    roleEn: 'Villa Owner',
-    roleAr: 'مالك فيلا',
-    locationEn: 'Jeddah (Al Rawdah) to Riyadh (Al Malqa)',
-    locationAr: 'من جدة (حي الروضة) إلى الرياض (حي الملقا)',
-    serviceTypeEn: 'Intercity Villa Relocation + Carpenter Service',
-    serviceTypeAr: 'نقل فيلا بالكامل مع فك وتركيب نجارين',
+    nameEn: 'Ahmad Al-Harbi',
+    nameAr: 'أحمد الحربي',
+    roleEn: 'Home Shifting · Jeddah',
+    roleAr: 'نقل عفش منزلي · جدة',
+    locationEn: 'Jeddah to Riyadh',
+    locationAr: 'من جدة إلى الرياض',
+    serviceTypeEn: 'Home Shifting',
+    serviceTypeAr: 'نقل عفش منزلي',
     rating: 5,
-    commentEn: 'Exceptional service! Moved our 5-bedroom villa from Jeddah to Riyadh. The carpenters disassembled our Italian bedroom sets and rebuilt them flawlessly. The closed Dyna trucks arrived right on schedule in Riyadh with zero damage.',
-    commentAr: 'خدمة احترافية ترفع الرأس! تم نقل فيلا كاملة 5 غرف نوم من جدة للرياض. النجارون قاموا بفك وتركيب غرف النوم الإيطالية بدقة متناهية، والسيارات الدينا المغلقة وصلت في موعدها تماماً بدون أي خدش.',
+    commentEn: 'The team packed our whole flat in Jeddah in a day and everything arrived safely in Riyadh. Genuinely stress-free from start to finish.',
+    commentAr: 'الفريق قام بتغليف ونقل كامل شقتنا في جدة خلال يوم واحد ووصل كل شيء بأمان إلى الرياض. تجربة مريحة وخالية من التوتر من البداية للنهاية.',
     date: 'August 2026',
-    verified: true,
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'
+    verified: true
   },
   {
     id: 'test-2',
-    nameEn: 'Dr. Sarah Mansoor',
-    nameAr: 'د. سارة منصور',
-    roleEn: 'Consultant',
-    roleAr: 'طبيبة استشارية',
-    locationEn: 'Jeddah (Al Shatie) to Jeddah (Al Hamra)',
-    locationAr: 'داخل جدة: من حي الشاطئ إلى حي الحمراء',
-    serviceTypeEn: 'Apartment Move + 5-Layer Packing',
-    serviceTypeAr: 'نقل شقة مع تغليف احترافي 5 طبقات',
+    nameEn: 'Salem Al-Otaibi',
+    nameAr: 'سالم العتيبي',
+    roleEn: 'Office Relocation · Riyadh',
+    roleAr: 'نقل مكاتب · الرياض',
+    locationEn: 'Corporate Move · Riyadh',
+    locationAr: 'نقل مقر شركة · الرياض',
+    serviceTypeEn: 'Office Relocation',
+    serviceTypeAr: 'نقل مكاتب وشركات',
     rating: 5,
-    commentEn: 'Their 5-layer packing is incredible. All my crystal dining sets, glassware, and 75-inch OLED TV were packed with extreme care. The team arrived on time at 8:00 AM with clean trucks and polite staff. Highly recommended in Jeddah!',
-    commentAr: 'التغليف عندهم صراحة مستوى عالمي. كل الأواني الكريستالية وأطقم الصيني وشاشة التلفزيون 75 بوصة غلفوها ببابلز وكراتين مقواة ولا انكسر أي شيء. الفريق وصل في وقته بالضبط وأخلاقهم ممتازة.',
+    commentEn: 'They moved our office over a weekend without a single day of downtime. Professional, punctual, and well-organised throughout.',
+    commentAr: 'نقلوا مكتبنا بالكامل خلال عطلة نهاية الأسبوع دون أي يوم توقف للعمل. احترافية والتزام دقيق بالمواعيد وتنظيم ممتاز طوال الوقت.',
     date: 'August 2026',
-    verified: true,
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'
+    verified: true
   },
   {
     id: 'test-3',
-    nameEn: 'Faisal Al-Zahrani',
-    nameAr: 'فيصل الزهراني',
-    roleEn: 'Operations Director',
-    roleAr: 'مدير عمليات',
-    locationEn: 'Jeddah to Dammam (Eastern Province)',
-    locationAr: 'من جدة إلى الدمام والخبر',
-    serviceTypeEn: 'Corporate Office Relocation (24 Workstations)',
-    serviceTypeAr: 'نقل مقر شركة ومكاتب إدارية',
+    nameEn: 'Noura Al-Ghamdi',
+    nameAr: 'نورة الغامدي',
+    roleEn: 'Furniture Moving · Jeddah',
+    roleAr: 'نقل أثاث · جدة',
+    locationEn: 'Jeddah Local Move',
+    locationAr: 'نقل محلي داخل جدة',
+    serviceTypeEn: 'Furniture Moving',
+    serviceTypeAr: 'نقل أثاث ومقتنيات',
     rating: 5,
-    commentEn: 'Relocated our entire regional office over the weekend. They tagged every server, monitor, and employee desk with coded labels. Everything was set up by Sunday morning with zero business downtime. Saad Packers are top tier in KSA.',
-    commentAr: 'نقلنا مقر شركتنا خلال عطلة نهاية الأسبوع من جدة للدمام. تم ترقيم كافة الأجهزة وشاشات الكمبيوتر ومكاتب الموظفين بالألوان ووصلت ورُكبت بالكامل قبل بداية دوام الأحد بدون أي توقف للعمل.',
+    commentEn: 'Fragile items, the piano, everything handled with real care right here in Jeddah. A fair price and right on time — we’d book them again without a second thought.',
+    commentAr: 'القطع الزجاجية والبيانو وكل الأثاث تم التعامل معه بعناية فائقة في جدة. سعر عادل ووصول بالموعد — سنحجز معهم مرة أخرى بالتأكيد.',
     date: 'July 2026',
-    verified: true,
-    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80'
+    verified: true
+  },
+  {
+    id: 'test-4',
+    nameEn: 'Fahad Al-Zahrani',
+    nameAr: 'فهد الزهراني',
+    roleEn: 'Intercity Transport · Mecca',
+    roleAr: 'نقل بين المدن · مكة المكرمة',
+    locationEn: 'Jeddah to Mecca',
+    locationAr: 'من جدة إلى مكة المكرمة',
+    serviceTypeEn: 'Intercity Transport',
+    serviceTypeAr: 'نقل بين المدن',
+    rating: 5,
+    commentEn: 'Moved our whole family home from Jeddah to Mecca in one smooth day. The crew was polite, quick, and nothing was so much as scratched.',
+    commentAr: 'نقلوا منزل عائلتنا بالكامل من جدة إلى مكة المكرمة في يوم واحد سلس. الطاقم خلوق وسريع ولم يتعرض أي شيء لأي خدش.',
+    date: 'July 2026',
+    verified: true
+  },
+  {
+    id: 'test-5',
+    nameEn: 'Reem Al-Shehri',
+    nameAr: 'ريم الشهري',
+    roleEn: 'Home Shifting · Dammam',
+    roleAr: 'نقل منزلي · الدمام',
+    locationEn: 'Jeddah to Dammam',
+    locationAr: 'من جدة إلى الدمام',
+    serviceTypeEn: 'Home Shifting',
+    serviceTypeAr: 'نقل منزلي وتغليف',
+    rating: 5,
+    commentEn: 'From the first call to the last box, everything went exactly as promised. Clear pricing, careful packing, and the furniture placed exactly where we wanted.',
+    commentAr: 'من أول مكالمة وحتى آخر كرتون، تم كل شيء كما وُعد بالضبط. أسعار واضحة وتغليف دقيق وترتيب الأثاث في المكان الذي طلبناه بالضبط.',
+    date: 'June 2026',
+    verified: true
+  },
+  {
+    id: 'test-6',
+    nameEn: 'Khalid Al-Qahtani',
+    nameAr: 'خالد القحطاني',
+    roleEn: 'Professional Packing · Yanbu',
+    roleAr: 'تغليف احترافي · ينبع',
+    locationEn: 'Jeddah to Yanbu',
+    locationAr: 'من جدة إلى ينبع',
+    serviceTypeEn: 'Professional Packing',
+    serviceTypeAr: 'تغليف احترافي',
+    rating: 5,
+    commentEn: 'I’ve never seen packing like this. Delicate electronics and glass arrived in perfect condition all the way to Yanbu. Worth every riyal.',
+    commentAr: 'لم أشاهد تغليفاً بهذه الجودة من قبل. الأجهزة الحساسة والزجاج وصلت بحالة ممتازة حتى ينبع. يستحق كل ريال.',
+    date: 'June 2026',
+    verified: true
   }
 ];
 
@@ -532,62 +641,59 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'pricing',
     questionEn: 'How are moving quotations and logistics planned in Jeddah and across KSA?',
     questionAr: 'كيف يتم تحديد خطة النقل وتقديم عروض الأسعار في جدة وكافة مدن المملكة؟',
-    answerEn: 'We provide 100% custom, transparent quotations based on: 1) Volume of furniture and truck allocation (Dyna 4.5-Ton / heavy trailers), 2) Route distance between cities, 3) Floor levels & elevator access (or hydraulic winch crane if needed), and 4) Tailored services including master carpenter disassembly, AC technicians, and multi-layer packing materials.',
-    answerAr: 'نقدم عروض أسعار وخطط نقل مخصصة وشفافة 100% بناءً على: 1) حجم الأثاث ونوع الشاحنات المطلوبة (دينا 4.5 طن أو تريلات شحن كبرى)، 2) مسافة الطريق بين المدن، 3) رقم الدور وتوفر المصعد أو الحاجة لـ ونش هيدروليكي، 4) الخدمات المطلوبة مثل فك وتركيب المطابخ والمكيفات ونوعية مواد التغليف الخماسي.'
+    answerEn: 'We provide 100% custom, transparent quotations based on: 1) Volume of furniture and truck allocation, 2) Route distance between cities, 3) Floor levels & elevator access, and 4) Tailored services including master carpenter disassembly, AC technicians, and multi-layer packing materials.',
+    answerAr: 'نقدم عروض أسعار وخطط نقل مخصصة وشفافة 100% بناءً على: 1) حجم الأثاث ونوع الشاحنات المطلوبة، 2) مسافة الطريق بين المدن، 3) رقم الدور وتوفر المصعد، 4) الخدمات المطلوبة مثل فك وتركيب المطابخ والمكيفات ونوعية مواد التغليف.'
   },
   {
     id: 'faq-2',
     category: 'packing',
-    questionEn: 'Do you provide professional carpenters (Najjar) for bedrooms and kitchens?',
-    questionAr: 'هل توفرون نجارين وفنيين متخصصين لفك وتركيب غرف النوم والمطابخ؟',
-    answerEn: 'Yes! We have certified, highly skilled master carpenters experienced with all furniture brands including IKEA, Home Centre, Italian luxury suites, Turkish modular designs, Chinese bedrooms, and custom modular kitchens. We also provide AC technicians for split and window units.',
-    answerAr: 'نعم بالتأكيد! نوفر نجارين محترفين ذوي خبرة طويلة في فك وتركيب جميع موديلات غرف النوم (ايكيا، تركي، إيطالي، صيني، وطني) ودواليب المطابخ وتعديل الرخام، بالإضافة لفنيين لفك وتركيب مكيفات السبليت والشباك.'
+    questionEn: 'Do you provide professional carpenters for wardrobes, bedrooms and kitchens?',
+    questionAr: 'هل توفرون نجارين وفنيين متخصصين لفك وتركيب الدواليب والمطابخ؟',
+    answerEn: 'Yes! We have certified, highly skilled master carpenters experienced with all furniture brands including IKEA, Home Centre, Italian luxury suites, Turkish modular designs, Chinese bedrooms, and custom modular kitchens.',
+    answerAr: 'نعم بالتأكيد! نوفر نجارين محترفين ذوي خبرة طويلة في فك وتركيب جميع موديلات غرف النوم (ايكيا، تركي، إيطالي، صيني، وطني) ودواليب المطابخ وتعديل الرخام.'
   },
   {
     id: 'faq-3',
     category: 'intercity',
     questionEn: 'How long does transit take from Jeddah to Riyadh, Dammam, or other cities?',
     questionAr: 'كم يستغرق نقل الأثاث من جدة إلى الرياض أو الدمام أو المدن الأخرى؟',
-    answerEn: 'For moves within Jeddah and nearby Makkah, transit is completed same-day within 3 to 6 hours. For intercity moves like Jeddah to Riyadh or Medina, we offer 24-hour express delivery. For Jeddah to Dammam / Eastern Province or Tabuk, transit takes 36 to 48 hours in our closed, insulated long-haul trucks.',
-    answerAr: 'داخل جدة ومكة المكرمة يتم النقل في نفس اليوم خلال 3 إلى 6 ساعات. أما النقل بين المدن (مثل من جدة إلى الرياض أو المدينة المنورة) فيتم التوصيل خلال 24 ساعة. وإلى الدمام والمنطقة الشرقية وتبوك يستغرق النقل بين 36 إلى 48 ساعة بشاحناتنا المغلقة والمجهزة.'
+    answerEn: 'For moves within Jeddah and nearby Makkah, transit is completed same-day within 3 to 6 hours. For intercity moves like Jeddah to Riyadh or Medina, we offer 24-hour express delivery. For Jeddah to Dammam or Yanbu, transit takes 24 to 48 hours.',
+    answerAr: 'داخل جدة ومكة المكرمة يتم النقل في نفس اليوم خلال 3 إلى 6 ساعات. أما النقل بين المدن (مثل من جدة إلى الرياض أو المدينة المنورة أو ينبع) فيتم التوصيل خلال 24 إلى 48 ساعة.'
   },
   {
     id: 'faq-4',
     category: 'safety',
     questionEn: 'What guarantees do you offer against scratches or accidental damage?',
     questionAr: 'ما هي الضمانات التي تقدمونها ضد الخدوش أو التلفيات؟',
-    answerEn: 'We provide a 100% Zero-Damage guarantee. We wrap fragile items in 5 layers (bubble wrap + foam + corrugated carton + shrink film), use padded blankets for all wooden furniture, and transport everything in fully enclosed, padded Dyna trucks secured with heavy-duty cargo straps.',
-    answerAr: 'نقدم ضماناً شاملاً لسلامة المنقولات 100%. نستخدم التغليف الخماسي للقطع الحساسة، وبطانيات التوسيد لجميع قطع الخشب والمجالس، وشاحنات دينا مغلقة ومبطنة مزودة بأحزمة تثبيت لمنع أي احتكاك أثناء حركة السيارة على الطريق.'
+    answerEn: 'We provide a comprehensive safety guarantee. We wrap fragile items in multi-layer cushioning, use padded blankets for all furniture, and transport everything in fully enclosed, padded Dyna trucks secured with heavy-duty cargo straps.',
+    answerAr: 'نقدم ضماناً شاملاً لسلامة المنقولات. نستخدم التغليف متعدد الطبقات للقطع الحساسة، وبطانيات التوسيد لجميع قطع الخشب والمجالس، وشاحنات دينا مغلقة ومبطنة مزودة بأحزمة تثبيت.'
   },
   {
     id: 'faq-5',
     category: 'pricing',
     questionEn: 'Do you offer a free on-site survey / inspection in Jeddah?',
     questionAr: 'هل توفرون معاينة مجانية للمنزل أو المكتب في جدة قبل النقل؟',
-    answerEn: 'Yes! We offer 100% free, no-obligation inspection visits by our logistics supervisor anywhere in Jeddah, or an instant virtual video quote via WhatsApp to inspect items and provide a tailored, accurate quote with no hidden fees.',
-    answerAr: 'نعم! نوفر خدمة المعاينة المجانية في أي مكان داخل مدينة جدة بدون أي التزام، أو معاينة فورية عبر تصوير الفيديو على الواتساب لتقييم حجم الأثاث وتقديم خطة وعرض دقيق وشامل لكافة الاحتياجات بدون أي رسوم خفية.'
+    answerEn: 'Yes! We offer free, no-obligation inspection visits anywhere in Jeddah, or an instant virtual video quote via WhatsApp to inspect items and provide a clear estimate with no hidden costs.',
+    answerAr: 'نعم! نوفر خدمة المعاينة المجانية في أي مكان داخل مدينة جدة بدون أي التزام، أو معاينة فورية عبر تصوير الفيديو على الواتساب لتقييم حجم الأثاث وتقديم خطة وعرض دقيق بدون أي رسوم خفية.'
   }
 ];
 
 export const COMPANY_CONTACTS = {
-  nameEn: 'Saad Packers & Movers KSA',
-  nameAr: 'سعد لنقل وتغليف الأثاث - المملكة العربية السعودية',
-  taglineEn: 'Premier Home Shifting, Furniture Moving & Professional Packing across Jeddah and All KSA',
-  taglineAr: 'رواد نقل العفش المنزلي، الأثاث المكتبي، والتغليف الاحترافي في جدة وكافة مدن المملكة',
-  phoneDisplay: '0575771358',
+  nameEn: 'SAAD Packers & Movers',
+  nameAr: 'شركة سعد لنقل وتغليف الأثاث',
+  taglineEn: 'Jeddah\'s trusted moving & relocation service — Moving made safe & simple.',
+  taglineAr: 'خدمة نقل وترحيل موثوقة في جدة — نقل آمن وبسيط.',
+  phoneDisplay: '+966 57 577 1358',
   phoneCall: '+966575771358',
   whatsappNumber: '966575771358',
-  whatsappLink: 'https://wa.me/966575771358?text=Hello%20Saad%20Packers%20Movers,%20I%20would%20like%20to%20get%20a%20moving%20survey%20and%20quote.',
-  whatsappLinkAr: 'https://wa.me/966575771358?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D8%B9%D8%AF%20%D9%84%D9%86%D9%82%D9%84%20%D8%A7%D9%84%D8%B9%D9%81%D8%B4%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D9%85%D8%B9%D8%A7%D9%8A%D9%86%D8%A9%20%D9%88%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%86%D9%82%D9%84%20%D9%88%D8%AA%D8%BA%D9%84%D9%8A%D9%81',
-  email: 'info@saadpackersksa.com',
-  headquartersAddressEn: 'Al Rawdah District, Prince Mohammed Bin Abdulaziz (Tahlia) St, Jeddah, Saudi Arabia',
-  headquartersAddressAr: 'حي الروضة، طريق الأمير محمد بن عبدالعزيز (التحلية)، جدة، المملكة العربية السعودية',
-  riyadhBranchEn: 'Al Olaya District, King Fahd Road, Riyadh',
-  riyadhBranchAr: 'حي العليا، طريق الملك فهد، الرياض',
-  dammamBranchEn: 'Al Faisaliyah District, King Abdulaziz St, Dammam',
-  dammamBranchAr: 'حي الفيصلية، طريق الملك عبدالعزيز، الدمام',
-  crNumber: 'CR 4030281944 (Saudi Ministry of Commerce Licensed)',
-  crNumberAr: 'سجل تجاري رقم 4030281944 - معتمد ومرخص من وزارة التجارة',
-  workingHoursEn: '24/7 Service & Emergency Relocation Hotline',
-  workingHoursAr: 'خدمة متواصلة على مدار 24 ساعة طوال أيام الأسبوع'
+  whatsappLink: 'https://wa.me/966575771358?text=Hello%20Saad%20Packers%20%26%20Movers,%20I%20would%20like%20to%20get%20a%20free%20quote.',
+  whatsappLinkAr: 'https://wa.me/966575771358?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B3%D8%B9%D8%AF%20%D9%84%D9%86%D9%82%D9%84%20%D8%A7%D9%84%D8%B9%D9%81%D8%B4%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A.',
+  email: 'info@saadpackersmovers.com',
+  website: 'https://saadmovingcompanyjeddah.com/',
+  headquartersAddressEn: 'Jeddah, Saudi Arabia',
+  headquartersAddressAr: 'جدة، المملكة العربية السعودية',
+  workingHoursEn: 'Sat – Thu · 9:00 AM – 9:00 PM',
+  workingHoursAr: 'السبت – الخميس · 9:00 صباحاً – 9:00 مساءً',
+  crNumber: 'Licensed & Insured Moving Service',
+  crNumberAr: 'خدمة نقل أثاث مرخصة ومؤمنة بالكامل'
 };

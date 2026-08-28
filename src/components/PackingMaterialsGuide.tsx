@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { PACKING_MATERIALS } from '../data/ksaData';
+import { WORK_IMAGES } from '../assets/images';
 import { 
   Package, 
   Shield, 
@@ -104,7 +105,7 @@ export const PackingMaterialsGuide: React.FC<{ onOpenBooking: () => void }> = ({
           <div className="bg-[#141414] text-white rounded-2xl overflow-hidden flex flex-col justify-between border border-[#C5A059]/40 ring-1 ring-[#C5A059]/20 shadow-xl group">
             <div className="relative h-44 w-full overflow-hidden bg-black/40">
               <img 
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" 
+                src={WORK_IMAGES.intercityTransport} 
                 alt="Saudi Climate Transportation"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-85 group-hover:scale-105 transition-transform duration-500"

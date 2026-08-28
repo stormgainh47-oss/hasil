@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_CONTACTS } from '../data/ksaData';
+import { WORK_IMAGES } from '../assets/images';
 import { 
   Calculator, 
   Truck, 
@@ -410,7 +411,7 @@ Please provide the tailored quotation and survey schedule.`;
             {/* Section Photo Visual */}
             <div className="relative rounded-2xl overflow-hidden border border-[#2A2A2A] shadow-xl group">
               <img 
-                src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80" 
+                src={WORK_IMAGES.intercityTransport} 
                 alt="Saad Movers Fleet KSA"
                 referrerPolicy="no-referrer"
                 className="w-full h-44 object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-500"

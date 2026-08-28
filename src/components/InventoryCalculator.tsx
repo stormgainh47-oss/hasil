@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { INVENTORY_CATEGORIES, COMPANY_CONTACTS } from '../data/ksaData';
+import { WORK_IMAGES } from '../assets/images';
 import { 
   Package, 
   Truck, 
@@ -296,7 +297,7 @@ Please provide me with a customized moving quote.`;
             {/* Visual Photo Card */}
             <div className="relative -mx-6 -mt-6 sm:-mx-7 sm:-mt-7 mb-3 h-36 overflow-hidden rounded-t-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" 
+                src={WORK_IMAGES.fragilePacking} 
                 alt="Saad Movers Packing & Inventory"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-80 hover:scale-105 transition-transform duration-500"

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { FAQ_ITEMS } from '../data/ksaData';
-import { HelpCircle, ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { COMPANY_CONTACTS } from '../data/ksaData';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const FaqSection: React.FC = () => {
   const { isArabic, t } = useLanguage();
@@ -17,7 +19,13 @@ export const FaqSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C5A059]/15 text-[#C5A059] text-xs font-bold mb-3 border border-[#C5A059]/30">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>{isArabic ? 'إجابات مباشرة وشفافة' : 'Clear Answers'}</span>
@@ -28,15 +36,19 @@ export const FaqSection: React.FC = () => {
           <p className="mt-3 text-sm sm:text-base text-neutral-400">
             {t('faq.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ Accordion */}
         <div className="space-y-3.5">
-          {FAQ_ITEMS.map((faq) => {
+          {FAQ_ITEMS.map((faq, index) => {
             const isOpen = openFaq === faq.id;
             return (
-              <div
+              <motion.div
                 key={faq.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="border border-[#222222] rounded-2xl overflow-hidden transition-all bg-[#121212] hover:bg-[#161616]"
               >
                 <button
@@ -49,18 +61,32 @@ export const FaqSection: React.FC = () => {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-2 text-xs sm:text-sm text-neutral-300 leading-relaxed border-t border-[#222222] bg-[#0D0D0D]">
-                    {isArabic ? faq.answerAr : faq.answerEn}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="px-5 pb-5 pt-2 text-xs sm:text-sm text-neutral-300 leading-relaxed border-t border-[#222222] bg-[#0D0D0D]"
+                    >
+                      {isArabic ? faq.answerAr : faq.answerEn}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Bottom Direct Question CTA */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#141414] border border-[#C5A059]/30 text-white flex flex-wrap items-center justify-between gap-4 shadow-xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12 p-6 rounded-2xl bg-[#141414] border border-[#C5A059]/30 text-white flex flex-wrap items-center justify-between gap-4 shadow-xl"
+        >
           <div>
             <h4 className="font-bold text-base text-white">
               {isArabic ? 'لديك استفسار خاص عن أثاثك أو موقعك؟' : 'Have a custom question about your items?'}
@@ -74,12 +100,12 @@ export const FaqSection: React.FC = () => {
             href={isArabic ? COMPANY_CONTACTS.whatsappLinkAr : COMPANY_CONTACTS.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center gap-2 shadow-sm transition"
+            className="px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm rounded-xl flex items-center gap-2 shadow-sm transition"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
             <span>{isArabic ? 'محادثة واتساب فورية' : 'Chat on WhatsApp'}</span>
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -4,7 +4,6 @@ import { COMPANY_CONTACTS } from '../data/ksaData';
 import { 
   Truck, 
   Phone, 
-  MessageSquare, 
   Globe, 
   Menu, 
   X, 
@@ -14,6 +13,7 @@ import {
   CheckCircle2,
   MapPin
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -148,9 +148,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               id="nav-whatsapp-btn"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-md shadow-emerald-600/20 transition"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs sm:text-sm font-bold text-white bg-[#25D366] hover:bg-[#20ba59] rounded-xl shadow-md shadow-[#25D366]/25 transition"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
               <span>{t('nav.whatsapp')}</span>
             </a>
 
@@ -232,9 +232,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   href={isArabic ? COMPANY_CONTACTS.whatsappLinkAr : COMPANY_CONTACTS.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-center flex items-center justify-center gap-1.5 text-sm"
+                  className="py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl text-center flex items-center justify-center gap-1.5 text-sm shadow-md"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                   {isArabic ? 'واتساب' : 'WhatsApp'}
                 </a>
               </div>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_CONTACTS } from '../data/ksaData';
 import { 
   Phone, 
-  MessageSquare, 
   Mail, 
   Clock, 
   CheckCircle2, 
@@ -13,6 +13,7 @@ import {
   MapPin,
   Truck
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const FreeQuoteFormSection: React.FC = () => {
   const { isArabic } = useLanguage();
@@ -70,7 +71,13 @@ export const FreeQuoteFormSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
             {isArabic ? 'عرض سعر مجاني' : 'Free quote'}
           </span>
@@ -82,13 +89,19 @@ export const FreeQuoteFormSection: React.FC = () => {
               ? 'أخبرنا عن تفاصيل نقلك في أي مكان بالمملكة وسنرسل لك تقديراً واضحاً ومسبقاً — عادة خلال ساعات قليلة. بدون أي ضغوط أو تكاليف خفية.' 
               : "Tell us about your move anywhere in Saudi Arabia and we'll send a clear, upfront estimate — usually within a few hours. No pressure, no hidden costs."}
           </p>
-        </div>
+        </motion.div>
 
         {/* 2 Column Layout: Sidebar Contact Cards + Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Contact Details Sidebar (4 Cols) */}
-          <div className="lg:col-span-5 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? 30 : -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 space-y-4"
+          >
             
             {/* Call Card */}
             <a 
@@ -113,10 +126,10 @@ export const FreeQuoteFormSection: React.FC = () => {
               href={isArabic ? COMPANY_CONTACTS.whatsappLinkAr : COMPANY_CONTACTS.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 hover:border-emerald-400 bg-emerald-50/50 hover:bg-white hover:shadow-md transition-all group"
+              className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 hover:border-[#25D366] bg-emerald-50/50 hover:bg-white hover:shadow-md transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
-                <MessageSquare className="w-5 h-5 fill-current" />
+              <div className="w-12 h-12 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#25D366]/25 group-hover:scale-105 transition-transform">
+                <WhatsAppIcon className="w-6 h-6 fill-white" size={24} />
               </div>
               <div>
                 <span className="text-xs text-emerald-800 font-bold block uppercase tracking-wider">
@@ -174,10 +187,16 @@ export const FreeQuoteFormSection: React.FC = () => {
               </p>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Quote Form (7 Cols) */}
-          <div className="lg:col-span-7">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? -30 : 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-7"
+          >
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg">
               
               {submitted ? (
@@ -346,7 +365,7 @@ export const FreeQuoteFormSection: React.FC = () => {
               )}
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

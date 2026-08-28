@@ -61,12 +61,25 @@ const DICTIONARY: Record<string, { en: string; ar: string }> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ar'); // Default to Arabic as primary target is KSA
+  const [language, setLanguage] = useState<Language>(() => {
+    try {
+      const saved = localStorage.getItem('saad_preferred_language');
+      if (saved === 'ar' || saved === 'en') return saved;
+    } catch {
+      // ignore
+    }
+    return 'en'; // Default to English as requested
+  });
 
   useEffect(() => {
     // Set document direction and language attribute
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    try {
+      localStorage.setItem('saad_preferred_language', language);
+    } catch {
+      // ignore
+    }
   }, [language]);
 
   const t = (key: string, defaultText?: string): string => {

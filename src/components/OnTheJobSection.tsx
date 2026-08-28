@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { WORK_IMAGES } from '../assets/images';
 import { CheckCircle2 } from 'lucide-react';
@@ -50,7 +51,13 @@ export const OnTheJobSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-14"
+        >
           <span className="text-xs font-extrabold uppercase tracking-widest text-slate-600 bg-slate-100 px-3.5 py-1.5 rounded-full border border-slate-200">
             {isArabic ? 'أعمالنا الميدانية' : 'On the job'}
           </span>
@@ -62,13 +69,18 @@ export const OnTheJobSection: React.FC = () => {
               ? 'شاهد كيف يتعامل طاقمنا المحترف وأسطول الدباب والدينا مع كل عملية نقل بأعلى معايير الدقة والحرص.' 
               : 'See how our trained moving crews, Dabbab & Dyna fleet execute every project with utmost precision and care.'}
           </p>
-        </div>
+        </motion.div>
 
         {/* 4 Showcase Visual Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {showcase.map((item, idx) => (
-            <div 
+            <motion.div 
               key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col bg-white"
             >
               <div className="relative h-60 overflow-hidden bg-slate-100">
@@ -96,7 +108,7 @@ export const OnTheJobSection: React.FC = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

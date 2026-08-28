@@ -4,7 +4,6 @@ import { COMPANY_CONTACTS } from '../data/ksaData';
 import { 
   Truck, 
   Phone, 
-  MessageSquare, 
   Mail, 
   MapPin, 
   ShieldCheck, 
@@ -12,6 +11,7 @@ import {
   Clock,
   ExternalLink
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface FooterProps {
   onOpenBooking: () => void;
@@ -147,10 +147,10 @@ export const Footer: React.FC<FooterProps> = ({
               href={isArabic ? COMPANY_CONTACTS.whatsappLinkAr : COMPANY_CONTACTS.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center gap-3 hover:border-emerald-500 transition group"
+              className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center gap-3 hover:border-[#25D366] transition group"
             >
-              <div className="p-2 rounded-lg bg-emerald-600 text-white group-hover:scale-105 transition-transform">
-                <MessageSquare className="w-5 h-5" />
+              <div className="p-2 rounded-lg bg-[#25D366] text-white group-hover:scale-105 transition-transform shadow-md shadow-[#25D366]/20">
+                <WhatsAppIcon className="w-5 h-5 fill-white" size={20} />
               </div>
               <div>
                 <div className="text-[11px] text-emerald-400 font-medium">{isArabic ? 'خدمة الواتساب الفورية' : 'WhatsApp Support'}</div>

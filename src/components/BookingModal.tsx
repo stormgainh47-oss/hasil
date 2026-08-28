@@ -9,11 +9,11 @@ import {
   Phone, 
   User, 
   Truck, 
-  MessageSquare, 
   ShieldCheck, 
   Loader2,
   AlertCircle
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -310,9 +310,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2"
+                className="w-full py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-[#25D366]/25 transition flex items-center justify-center gap-2"
               >
-                <MessageSquare className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                 <span>{isArabic ? 'إرسال تفاصيل الحجز للمشرف عبر الواتساب' : 'Notify Supervisor on WhatsApp'}</span>
               </a>
 

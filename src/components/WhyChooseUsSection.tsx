@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { ShieldCheck, Clock, Users, DollarSign } from 'lucide-react';
 
@@ -44,7 +45,13 @@ export const WhyChooseUsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-xs font-extrabold uppercase tracking-widest text-amber-400 bg-amber-950/80 px-3.5 py-1.5 rounded-full border border-amber-500/30">
             {isArabic ? 'لماذا تختارنا' : 'Why choose us'}
           </span>
@@ -56,16 +63,21 @@ export const WhyChooseUsSection: React.FC = () => {
               ? 'نتعامل مع كل صندوق وكأنه ملكنا. إليك ما يمكنك الاعتماد عليه مع كل عملية نقل مع شركة سعد:' 
               : "We treat every box like our own. Here's what you can count on with every Saad move:"}
           </p>
-        </div>
+        </motion.div>
 
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div 
+              <motion.div 
                 key={index}
-                className="bg-slate-800/80 border border-slate-700/80 hover:border-amber-400/60 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-slate-800/80 border border-slate-700/80 hover:border-amber-400/60 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
@@ -78,7 +90,7 @@ export const WhyChooseUsSection: React.FC = () => {
                     {isArabic ? item.descAr : item.descEn}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_CONTACTS } from '../data/ksaData';
 import { WORK_IMAGES } from '../assets/images';
@@ -10,12 +11,12 @@ import {
   CheckCircle2, 
   MapPin, 
   ShieldCheck, 
-  MessageSquare, 
   Phone,
   Building,
   Home,
   Briefcase
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface QuickQuoteCalculatorProps {
   onOpenBookingWithQuote: (quoteData: any) => void;
@@ -136,7 +137,13 @@ Please provide the tailored quotation and survey schedule.`;
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C5A059]/15 text-[#C5A059] text-xs font-bold mb-3 border border-[#C5A059]/30">
             <Calculator className="w-3.5 h-3.5" />
             <span>{isArabic ? 'خطة النقل وتحديد الشاحنات والمسار' : 'Custom Relocation & Fleet Planner'}</span>
@@ -147,12 +154,18 @@ Please provide the tailored quotation and survey schedule.`;
           <p className="mt-3 text-sm sm:text-base text-neutral-400">
             {t('calculator.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Controls Form (7 Cols) */}
-          <div className="lg:col-span-7 bg-[#121212] rounded-2xl p-6 sm:p-8 shadow-xl border border-[#222222] space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? 25 : -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-[#121212] rounded-2xl p-6 sm:p-8 shadow-xl border border-[#222222] space-y-6"
+          >
             
             {/* Step 1: Move Type Grid */}
             <div>
@@ -403,10 +416,16 @@ Please provide the tailored quotation and survey schedule.`;
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Real-time Logistics Plan Summary Card (5 Cols) */}
-          <div className="lg:col-span-5 sticky top-24 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? -25 : 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-5 sticky top-24 space-y-4"
+          >
             
             {/* Section Photo Visual */}
             <div className="relative rounded-2xl overflow-hidden border border-[#2A2A2A] shadow-xl group">
@@ -500,9 +519,9 @@ Please provide the tailored quotation and survey schedule.`;
                   target="_blank"
                   rel="noopener noreferrer"
                   id="calc-whatsapp-confirm-btn"
-                  className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-center shadow-lg transition flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl text-center shadow-lg shadow-[#25D366]/25 transition flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <MessageSquare className="w-5 h-5" />
+                  <WhatsAppIcon className="w-5 h-5 fill-white" size={20} />
                   <span>{t('calculator.book_whatsapp')}</span>
                 </a>
 
@@ -537,7 +556,7 @@ Please provide the tailored quotation and survey schedule.`;
               </a>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 

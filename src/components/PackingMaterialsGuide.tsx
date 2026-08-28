@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { PACKING_MATERIALS } from '../data/ksaData';
 import { WORK_IMAGES } from '../assets/images';
@@ -36,7 +37,13 @@ export const PackingMaterialsGuide: React.FC<{ onOpenBooking: () => void }> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-14"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C5A059]/15 text-[#C5A059] text-xs font-bold mb-3 border border-[#C5A059]/30">
             <Package className="w-3.5 h-3.5" />
             <span>{isArabic ? 'معايير التغليف الاحترافي الفائق' : 'Military-Grade Packing Materials'}</span>
@@ -47,14 +54,19 @@ export const PackingMaterialsGuide: React.FC<{ onOpenBooking: () => void }> = ({
           <p className="mt-3 text-sm sm:text-base text-neutral-400">
             {t('packing.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* 5-Layer Visual Timeline / Breakdown */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {PACKING_MATERIALS.map((mat) => {
+          {PACKING_MATERIALS.map((mat, idx) => {
             return (
-              <div
+              <motion.div
                 key={mat.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-[#121212] hover:bg-[#161616] rounded-2xl overflow-hidden border border-[#222222] hover:border-[#C5A059]/40 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
@@ -97,12 +109,19 @@ export const PackingMaterialsGuide: React.FC<{ onOpenBooking: () => void }> = ({
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
 
           {/* 6th Card: Climate Guarantee */}
-          <div className="bg-[#141414] text-white rounded-2xl overflow-hidden flex flex-col justify-between border border-[#C5A059]/40 ring-1 ring-[#C5A059]/20 shadow-xl group">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            className="bg-[#141414] text-white rounded-2xl overflow-hidden flex flex-col justify-between border border-[#C5A059]/40 ring-1 ring-[#C5A059]/20 shadow-xl group"
+          >
             <div className="relative h-44 w-full overflow-hidden bg-black/40">
               <img 
                 src={WORK_IMAGES.intercityTransport} 
@@ -141,7 +160,7 @@ export const PackingMaterialsGuide: React.FC<{ onOpenBooking: () => void }> = ({
                 <ArrowIcon className="w-4 h-4" />
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
 
       </div>

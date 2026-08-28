@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { MapPin, Navigation, ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -23,7 +24,13 @@ export const CoverageSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-14"
+        >
           <span className="text-xs font-extrabold uppercase tracking-widest text-blue-400 bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-500/30">
             {isArabic ? 'نطاق التغطية' : 'Coverage'}
           </span>
@@ -35,13 +42,18 @@ export const CoverageSection: React.FC = () => {
               ? 'نقل محلي داخل أحياء جدة ونقل بين المدن لكافة المدن الرئيسية في المملكة العربية السعودية — دائماً في الموعد وبكل حرص.' 
               : 'Local moves across Jeddah and intercity relocations to every major city in Saudi Arabia — always on time, always careful.'}
           </p>
-        </div>
+        </motion.div>
 
         {/* Cities Chips Matrix */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {cities.map((city, idx) => (
-            <div 
+            <motion.div 
               key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              whileHover={{ scale: 1.04, transition: { duration: 0.15 } }}
               className={`p-4 rounded-2xl border transition-all duration-300 flex items-center gap-3 ${
                 city.highlight 
                   ? 'bg-gradient-to-r from-amber-500 to-amber-600 border-amber-400 text-slate-950 font-black shadow-lg shadow-amber-500/20' 
@@ -65,12 +77,18 @@ export const CoverageSection: React.FC = () => {
                   </span>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Dispatch Fleet Note Banner */}
-        <div className="mt-12 p-6 rounded-2xl bg-slate-800/90 border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12 p-6 rounded-2xl bg-slate-800/90 border border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start"
+        >
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
               <Navigation className="w-5 h-5" />
@@ -92,7 +110,7 @@ export const CoverageSection: React.FC = () => {
           >
             {isArabic ? 'استفسر عن رحلات اليوم' : 'Check Today’s Route'}
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { SERVICES_CATALOG } from '../data/ksaData';
 import { WORK_IMAGES } from '../assets/images';
@@ -47,7 +48,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-3 border border-blue-200">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>{isArabic ? 'خدمات احترافية متكاملة' : 'Our Services'}</span>
@@ -58,10 +65,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-medium max-w-2xl mx-auto">
             {isArabic ? 'من قطعة أثاث واحدة وحتى مكاتب وشركات كاملة، نقوم بالتغليف والتحميل والنقل والتركيب — كل ذلك تحت سقف واحد.' : 'From a single sofa to a full office, we pack, load, transport, and unpack — all under one roof.'}
           </p>
-        </div>
+        </motion.div>
 
         {/* Feature Visual Crew Banner */}
-        <div className="mb-14 rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-900 relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-900 relative"
+        >
           <div className="h-64 sm:h-72 w-full relative">
             <img 
               src={WORK_IMAGES.furnitureWrapping} 
@@ -85,14 +98,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Services Grid (7 Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {SERVICES_CATALOG.map((service) => {
+          {SERVICES_CATALOG.map((service, index) => {
             return (
-              <div
+              <motion.div
                 key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.07 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-white hover:bg-slate-50/70 rounded-2xl border border-slate-200 hover:border-blue-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group overflow-hidden shadow-sm"
               >
                 <div>
@@ -160,7 +178,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     {isArabic ? 'احصل على عرض سعر' : 'Get a quote'}
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

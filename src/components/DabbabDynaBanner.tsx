@@ -1,8 +1,10 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { WORK_IMAGES } from '../assets/images';
 import { COMPANY_CONTACTS } from '../data/ksaData';
-import { Phone, MessageSquare, Truck, Clock, ShieldCheck, Zap } from 'lucide-react';
+import { Phone, Truck, Clock, ShieldCheck, Zap } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface DabbabDynaBannerProps {
   onOpenBooking?: () => void;
@@ -18,11 +20,23 @@ export const DabbabDynaBanner: React.FC<DabbabDynaBannerProps> = ({ onOpenBookin
       <div className="absolute bottom-0 start-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-slate-700/80 shadow-2xl overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-slate-700/80 shadow-2xl overflow-hidden"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Left/Main Image Visual */}
-            <div className="lg:col-span-6 relative h-72 sm:h-96 lg:h-full min-h-[320px] overflow-hidden bg-slate-950">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="lg:col-span-6 relative h-72 sm:h-96 lg:h-full min-h-[320px] overflow-hidden bg-slate-950"
+            >
               <img 
                 src={WORK_IMAGES.dabbabDynaLocal} 
                 alt="Dabbab and Dyna Available for Local Transport in Jeddah KSA"
@@ -45,7 +59,7 @@ export const DabbabDynaBanner: React.FC<DabbabDynaBannerProps> = ({ onOpenBookin
                     : 'Equipped Dabbab & Dyna for swift local shifting across all Jeddah neighborhoods'}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Content & Direct CTA */}
             <div className="lg:col-span-6 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
@@ -95,17 +109,21 @@ export const DabbabDynaBanner: React.FC<DabbabDynaBannerProps> = ({ onOpenBookin
               {/* Action Buttons */}
               <div className="mt-8 pt-6 border-t border-slate-700/80 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {/* Direct Phone Call */}
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   href={`tel:${COMPANY_CONTACTS.phoneCall}`}
                   id="dabbab-dyna-call-btn"
                   className="py-3.5 px-5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl text-sm shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2.5 group cursor-pointer"
                 >
                   <Phone className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
                   <span>{isArabic ? 'اتصل بي الآن (24/7)' : 'Call Me Anytime (24/7)'}</span>
-                </a>
+                </motion.a>
 
                 {/* WhatsApp Chat */}
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   href={`https://wa.me/966575771358?text=${encodeURIComponent(
                     isArabic 
                       ? 'مرحباً، أحتاج دباب / دينا لنقل وتوصيل محلي في جدة' 
@@ -114,11 +132,11 @@ export const DabbabDynaBanner: React.FC<DabbabDynaBannerProps> = ({ onOpenBookin
                   target="_blank"
                   rel="noopener noreferrer"
                   id="dabbab-dyna-whatsapp-btn"
-                  className="py-3.5 px-5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                  className="py-3.5 px-5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl text-sm shadow-lg shadow-[#25D366]/25 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
                 >
-                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <WhatsAppIcon className="w-5 h-5 fill-white" size={20} />
                   <span>{isArabic ? 'واتساب مباشر' : 'WhatsApp 24/7'}</span>
-                </a>
+                </motion.a>
               </div>
 
               {/* Direct Phone Number Bar */}
@@ -132,7 +150,7 @@ export const DabbabDynaBanner: React.FC<DabbabDynaBannerProps> = ({ onOpenBookin
             </div>
 
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

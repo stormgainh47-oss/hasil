@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { FileText, PackageCheck, Truck, Home, ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -50,7 +51,13 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenQuot
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-xs font-extrabold uppercase tracking-widest text-blue-700 bg-blue-100 px-3.5 py-1.5 rounded-full border border-blue-200">
             {isArabic ? 'كيف نعمل' : 'How it works'}
           </span>
@@ -62,15 +69,20 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenQuot
               ? 'عملية منظمة ومباشرة صُممت لراحتك وطمأنينتك من أول اتصال وحتى آخر صندوق.' 
               : 'A straightforward process designed to keep you calm from first call to final box.'}
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
           {steps.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div 
+              <motion.div 
                 key={index} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between relative"
               >
                 <div>
@@ -91,21 +103,27 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ onOpenQuot
                     {isArabic ? item.descAr : item.descEn}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Bottom Action CTA */}
-        <div className="mt-12 text-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
           <button
             onClick={onOpenQuote}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-blue-700 hover:bg-blue-800 text-white text-base font-bold rounded-xl shadow-lg shadow-blue-700/20 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-blue-700 hover:bg-blue-800 text-white text-base font-bold rounded-xl shadow-lg shadow-blue-700/20 transition-all cursor-pointer hover:scale-105"
           >
             <span>{isArabic ? 'ابدأ خطوتك الأولى — اطلب عرض سعر' : 'Start Step 1 — Request a Free Quote'}</span>
             <ArrowIcon className="w-4 h-4" />
           </button>
-        </div>
+        </motion.div>
 
       </div>
     </section>

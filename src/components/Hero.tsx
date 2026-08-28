@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { COMPANY_CONTACTS } from '../data/ksaData';
 import { WORK_IMAGES } from '../assets/images';
@@ -10,10 +11,10 @@ import {
   ArrowRight, 
   ArrowLeft, 
   CheckCircle2, 
-  MessageSquare, 
   Phone,
   Users
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -41,7 +42,12 @@ export const Hero: React.FC<HeroProps> = ({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Trust Pill */}
-        <div className="flex justify-center sm:justify-start mb-6">
+        <motion.div 
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center sm:justify-start mb-6"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold shadow-sm">
             <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="font-bold text-blue-700">
@@ -56,12 +62,17 @@ export const Hero: React.FC<HeroProps> = ({
               {isArabic ? 'جدة وكافة أنحاء المملكة' : 'Jeddah & All Over KSA'}
             </span>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Main Headline & Value Props (7 cols on lg) */}
-          <div className="lg:col-span-7 space-y-6 text-center sm:text-start">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? 30 : -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-7 space-y-6 text-center sm:text-start"
+          >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
               <span className="block text-slate-900">
                 {isArabic 
@@ -81,37 +92,49 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* 4 Trust Feature Pills */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div className="bg-white border border-slate-200/90 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm">
+              <motion.div 
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="bg-white border border-slate-200/90 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm"
+              >
                 <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-2">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <h4 className="text-xs font-bold text-slate-900">{isArabic ? 'مرخص ومؤمن' : 'Licensed & insured'}</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">{isArabic ? 'ضمان وراحة بال' : 'Full peace of mind'}</p>
-              </div>
+              </motion.div>
 
-              <div className="bg-white border border-slate-200/90 hover:border-amber-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm">
+              <motion.div 
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="bg-white border border-slate-200/90 hover:border-amber-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm"
+              >
                 <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-2">
                   <Clock className="w-4 h-4" />
                 </div>
                 <h4 className="text-xs font-bold text-slate-900">{isArabic ? 'في الموعد، دائماً' : 'On-time, every time'}</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">{isArabic ? 'التزام دقيق بالوقت' : 'Strict punctuality'}</p>
-              </div>
+              </motion.div>
 
-              <div className="bg-white border border-slate-200/90 hover:border-emerald-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm">
+              <motion.div 
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="bg-white border border-slate-200/90 hover:border-emerald-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm"
+              >
                 <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-2">
                   <Users className="w-4 h-4" />
                 </div>
                 <h4 className="text-xs font-bold text-slate-900">{isArabic ? 'طاقم عمل مدرب' : 'Trained moving crew'}</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">{isArabic ? 'أيادٍ ماهرة وحريصة' : 'Skilled & careful'}</p>
-              </div>
+              </motion.div>
 
-              <div className="bg-white border border-slate-200/90 hover:border-indigo-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm">
+              <motion.div 
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="bg-white border border-slate-200/90 hover:border-indigo-300 hover:shadow-md transition-all rounded-2xl p-3.5 text-start shadow-sm"
+              >
                 <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center mb-2">
                   <Package className="w-4 h-4" />
                 </div>
                 <h4 className="text-xs font-bold text-slate-900">{isArabic ? 'تغليف احترافي' : 'Professional packing'}</h4>
                 <p className="text-[11px] text-slate-500 mt-0.5">{isArabic ? 'كرتون وبابلز متين' : 'Boxes & bubble wrap'}</p>
-              </div>
+              </motion.div>
             </div>
 
             {/* Primary Action Buttons */}
@@ -139,9 +162,9 @@ export const Hero: React.FC<HeroProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-whatsapp-btn"
-                className="px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-md shadow-emerald-600/20 transition-all inline-flex items-center gap-2 cursor-pointer"
+                className="px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base shadow-md shadow-[#25D366]/25 transition-all inline-flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
               >
-                <MessageSquare className="w-4 h-4 fill-current" />
+                <WhatsAppIcon className="w-5 h-5 fill-white" size={20} />
                 <span>{isArabic ? 'واتساب مباشر' : 'WhatsApp'}</span>
               </a>
             </div>
@@ -165,10 +188,15 @@ export const Hero: React.FC<HeroProps> = ({
                 <div className="text-xs text-slate-500 font-medium">{isArabic ? 'خدمة متواصلة' : 'Support & Dispatch'}</div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Move Request & Free Survey Card (5 cols on lg) */}
-          <div className="lg:col-span-5 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: isArabic ? -30 : 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5 space-y-4"
+          >
             {/* Hero Visual Image Banner */}
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg group bg-slate-100">
               <img 
@@ -242,9 +270,9 @@ export const Hero: React.FC<HeroProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     id="hero-card-whatsapp-btn"
-                    className="py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-emerald-600/20 transition cursor-pointer flex items-center justify-center gap-2"
+                    className="py-3 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl text-xs sm:text-sm shadow-md shadow-[#25D366]/20 transition cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <MessageSquare className="w-4 h-4 fill-current" />
+                    <WhatsAppIcon className="w-4 h-4 fill-white" size={16} />
                     <span>{isArabic ? 'واتساب مباشر' : 'WhatsApp'}</span>
                   </a>
 
@@ -277,7 +305,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

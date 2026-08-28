@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
 import { TESTIMONIALS } from '../data/ksaData';
 import { Star, ShieldCheck, MapPin, Quote } from 'lucide-react';
@@ -11,7 +12,13 @@ export const TestimonialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-14"
+        >
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold mb-3 border border-amber-200">
             <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
             <span>{isArabic ? 'تقييمات وتجارب حقيقية' : 'Reviews'}</span>
@@ -22,14 +29,19 @@ export const TestimonialsSection: React.FC = () => {
           <p className="mt-3 text-sm sm:text-base text-slate-600 font-medium">
             {isArabic ? 'انطباعات وآراء من عملائنا الكرام بعد عمليات النقل في جدة والرياض والدمام ومكة وينبع.' : 'A few notes from happy customers. Real reviews from across Jeddah and KSA.'}
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid (6 cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {TESTIMONIALS.map((review) => {
+          {TESTIMONIALS.map((review, idx) => {
             return (
-              <div
+              <motion.div
                 key={review.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm flex flex-col justify-between relative hover:border-blue-300 hover:shadow-md transition-all"
               >
                 <div>
@@ -81,7 +93,7 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
